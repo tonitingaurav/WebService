@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/product" xmlns:tns="http://www.example.org/product" elementFormDefault="qualified">
+
+	<xs:element name="product" type="tns:ProductType"></xs:element>
+	<xs:element name="productList" type="tns:ProductListType"></xs:element>
+
+	<xs:complexType name="ProductType">
+		<xs:sequence>
+			<xs:element name="id" type="xs:integer" maxOccurs="1" minOccurs="1"></xs:element>
+			<xs:element name="productName" type="xs:string" maxOccurs="1" minOccurs="1"></xs:element>
+			<xs:element name="productPrice" type="xs:double" maxOccurs="1" minOccurs="1"></xs:element>
+			<xs:element name="manufactureDate" type="xs:date" maxOccurs="1" minOccurs="0"></xs:element>
+			<xs:element name="expiryDate" type="xs:date" maxOccurs="1" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ProductListType">
+		<xs:sequence>
+			<xs:element name="product" type="tns:ProductType" maxOccurs="unbounded" minOccurs="1"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
