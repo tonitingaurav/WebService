@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/catalog" xmlns:tns="http://www.example.org/catalog" elementFormDefault="qualified" xmlns:product="http://www.example.org/product">
+<xs:schema targetNamespace="http://www.service.rabincap.com/catalog" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.service.rabincap.com/catalog" xmlns:product="http://www.service.rabincap.com/product">
 
+	<xs:import schemaLocation="/WEB-INF/xsd/product/product.xsd" namespace="http://www.service.rabincap.com/product" />
+	<xs:element name="getCatalogRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="id" type="xs:integer" maxOccurs="1" minOccurs="1"></xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
 
-	<xs:import schemaLocation="../product/product.xsd" namespace="http://www.example.org/product"></xs:import>
-	<xs:element name="catalog" type="tns:CatalogType"></xs:element>
+	<xs:element name="getCatalogResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="catalog" type="tns:CatalogType" maxOccurs="1" minOccurs="1"></xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
 
 	<xs:complexType name="CatalogType">
 		<xs:sequence>

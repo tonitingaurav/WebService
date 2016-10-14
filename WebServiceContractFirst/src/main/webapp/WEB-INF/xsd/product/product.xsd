@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/product" xmlns:tns="http://www.example.org/product" elementFormDefault="qualified">
+<xs:schema targetNamespace="http://www.service.rabincap.com/product" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:product="http://www.service.rabincap.com/product">
 
-	<xs:element name="product" type="tns:ProductType"></xs:element>
-	<xs:element name="productList" type="tns:ProductListType"></xs:element>
+	<xs:element name="product" type="product:ProductType"></xs:element>
+	<xs:element name="productList" type="product:ProductListType"></xs:element>
 
 	<xs:complexType name="ProductType">
 		<xs:sequence>
@@ -16,7 +16,7 @@
 
 	<xs:complexType name="ProductListType">
 		<xs:sequence>
-			<xs:element name="product" type="tns:ProductType" maxOccurs="unbounded" minOccurs="1"></xs:element>
+			<xs:element name="product" type="product:ProductType" maxOccurs="unbounded" minOccurs="1"></xs:element>
 		</xs:sequence>
 	</xs:complexType>
 </xs:schema>
